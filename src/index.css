@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@layer base {
+  body {
+    font-family: "Nunito Sans Variable", sans-serif;
+  }
+
+  @theme {
+    --animate-float: float 4s ease-in-out infinite;
+    --animate-fadeIn: fadeIn 1s ease-in-out;
+    --color-night: #0d1120;
+    --color-night-50: #171e2c;
+    --color-night-500: #0d1120;
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .btn-press-anim {
+    @apply active:scale-75 transition;
+  }
+}
